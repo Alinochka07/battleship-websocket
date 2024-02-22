@@ -50,5 +50,9 @@ server.on('connection', (ws) => {
         if (request.type === 'reg') {
             await registration(request, ws);
         }
-    })
+    });
+
+    ws.on('close', () => {
+        console.log('Game over');
+    });
 });

@@ -3,10 +3,9 @@ import { RegResponse, UpdateRoomResponse, UpdateWinnersResponse } from "../inter
 import { players } from "./handleResRegistration";
 
 
-
 let roomIdCounter = 0;
 
-const handleRegResponse = (ws: WebSocket, response: RegResponse) => {
+export const handleRegResponse = (ws: WebSocket, response: RegResponse) => {
     if (!response.data.error) {
         const getRoomsData = () => {
             const data: { roomId: number; roomUsers: { name: string; index: number; }[]; }[] = [];
@@ -50,8 +49,6 @@ const handleRegResponse = (ws: WebSocket, response: RegResponse) => {
     }
 }
 
-
-
 const server = new WebSocket.Server({ port: 8181 });
 
 const broadcastResponseToAll = (response: any) => {
@@ -61,3 +58,4 @@ const broadcastResponseToAll = (response: any) => {
         }
     });
 };
+

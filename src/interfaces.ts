@@ -36,7 +36,7 @@ export interface CreateRoomResponse {
     id: number
 }
 
-export interface AddUserToRoomResponse {
+export interface AddUserToRoom {
     type: "add_user_to_room",
         data: {
             indexRoom: number,

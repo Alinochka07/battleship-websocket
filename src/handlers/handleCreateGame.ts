@@ -1,6 +1,6 @@
 import { WebSocket } from 'ws';
 import { CustomWebSocket, CreateGameRequest, CreateGameResponse } from "../interfaces";
-import { getOtherPlayersInTheRoom, getRoomForPlayer } from './roomUtils';
+import { getOtherPlayersInTheRoom } from './getOtherPlayersInTheRoom';
 
 let gameIdCounter = 0;
 export const gamePlayer: Map<number, number[]> = new Map();
@@ -9,7 +9,7 @@ function isCustomWebSocket(ws: WebSocket): ws is CustomWebSocket {
     return (ws as CustomWebSocket).playerId !== undefined;
 }
 
-export const createGame = async (request: CreateGameRequest, ws: WebSocket) => {
+export const handleCreateGame = async (request: CreateGameRequest, ws: WebSocket) => {
     if (!isCustomWebSocket(ws)) {
         throw new Error('Invalid WebSocket: Missing playerId');
     }
