@@ -1,14 +1,16 @@
 import { WebSocket } from 'ws';
 import { Player, RegRequest, RegResponse } from "../interfaces"
 
-const players: Player[] = [];
+export const players: Player[] = [];
 
 export const registration = async (request: RegRequest, ws: WebSocket) => {
     const response: RegResponse = {
         type: 'reg',
         data: {
             error: false,
-            errorText: ''
+            errorText: '',
+            name: '',
+            index: 0
         },
         id: request.id
     }
