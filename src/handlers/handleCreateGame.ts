@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import { CustomWebSocket, CreateGameRequest, CreateGameResponse } from "../interfaces";
+import { CustomWebSocket, CreateGameRequest, CreateGameResponse } from "../types";
 import { getOtherPlayersInTheRoom } from './getOtherPlayersInTheRoom';
 
 let gameIdCounter = 0;

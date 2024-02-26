@@ -8,12 +8,25 @@ export interface Player {
     isLogged: boolean,
 }
 
+
+export interface Room {
+    roomId: number;
+    roomUsers: {
+        name: string;
+        index: number;
+    }[];
+    winners?: string[];
+}
+
 // Registration
 export interface RegRequest {
     type: "reg",
     data: {
         name: string,
         password: string,
+        roomId: number,
+        roomUsers: string[],
+        winners: string[],
     },
     id: number,
 }
@@ -30,7 +43,7 @@ export interface RegResponse {
 }
 
 // Room
-export interface CreateRoomResponse {
+export interface CreateRoom {
     type: "create_room",
     data: string,
     id: number
@@ -46,14 +59,8 @@ export interface AddUserToRoom {
 
 export interface UpdateRoomResponse {
     type: "update_room",
-    data: {
-        roomId: number,
-        roomUsers: {
-            name: string,
-            index: number,
-        }[],
-    }[],
-    id: 0,
+    data: Room[],
+    id: number,
 }
 
 // Game

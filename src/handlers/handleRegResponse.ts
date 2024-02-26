@@ -1,5 +1,5 @@
 import WebSocket from "ws";
-import { RegResponse, UpdateRoomResponse, UpdateWinnersResponse } from "../interfaces";
+import { RegResponse, UpdateRoomResponse, UpdateWinnersResponse } from "../types";
 import { players } from "./handleResRegistration";
 
 

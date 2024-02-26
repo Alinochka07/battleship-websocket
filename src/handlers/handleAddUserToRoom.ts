@@ -1,5 +1,5 @@
 import WebSocket from "ws";
-import { AddUserToRoom, CreateGameResponse, CustomWebSocket } from "../interfaces";
+import { AddUserToRoom, CreateGameResponse, CustomWebSocket } from "../types";
 import { getOtherPlayersInTheRoom } from "./getOtherPlayersInTheRoom";
 
 

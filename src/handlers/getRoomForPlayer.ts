@@ -1,5 +1,5 @@
 import { WebSocket } from 'ws';
-import { CustomWebSocket } from "../interfaces";
+import { CustomWebSocket } from "../types";
 import { gamePlayer } from './handleCreateGame';
 
 
